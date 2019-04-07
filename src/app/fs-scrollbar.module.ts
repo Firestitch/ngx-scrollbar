@@ -11,10 +11,10 @@ import { CommonModule } from '@angular/common';
 
   ]
 })
-export class FsTabModule {
+export class FsScrollbarModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: FsTabModule
+      ngModule: FsScrollbarModule
     };
   }
 }

@@ -9,8 +9,6 @@ import { FsMessageModule } from '@firestitch/message';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { FsTabModule } from '@firestitch/package';
-
 import { AppMaterialModule } from './material.module';
 import {
   ExampleComponent,

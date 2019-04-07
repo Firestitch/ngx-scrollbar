@@ -2,4 +2,4 @@
  * Public API Surface of fs-menu
  */
 
-export { FsTabModule } from './app/fs-tab.module';
+export { FsScrollbarModule } from './app/fs-scrollbar.module';

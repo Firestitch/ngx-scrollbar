@@ -1,11 +1,11 @@
 {
-  "name": "@firestitch/tab",
-  "title": "Tab",
-  "description": "@firestitch/tab",
-  "version": "7.0.3",
+  "name": "@firestitch/scrollbar",
+  "title": "Scrollbar",
+  "description": "@firestitch/scrollbar",
+  "version": "7.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Firestitch/ngx-tab"
+    "url": "https://github.com/Firestitch/ngx-scrollbar"
   },
   "author": {
     "name": "Firestitch",
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Firestitch/ngx-tab/issues"
+    "url": "https://github.com/Firestitch/ngx-scrollbar/issues"
   },
   "main": "package/index.js",
   "typings": "package/index.d.ts",
