@@ -30,26 +30,44 @@ export class FsScrollbarService {
     let style = `::-webkit-scrollbar {
         height: 6px;
         width: 6px;
+        scrollbar-width: none;
       }
 
       ::-webkit-scrollbar-thumb {
         background-color: rgba(166, 164, 164, 0.65);
         outline: none;
         border-radius: 44px;
-      }`;
+      }
+
+      * {
+        scrollbar-color: rgba(166, 164, 164, 0.65);
+        scrollbar-width: 6px;
+      }
+      `;
 
     this._hideScrollbars.forEach(item => {
 
-    style += `
-      ${item}::-webkit-scrollbar {
-        width: 0px;
-        display: none;
-        visibility: hidden;
-      }
+      style += `
+        ${item}::-webkit-scrollbar {
+          width: 0px;
+          scrollbar-width: none;
+        }
 
-      ${item}::-webkit-scrollbar-thumb {
-        background-color: transparent;
-      }`;
+        ${item}::-webkit-scrollbar-thumb {
+          background-color: transparent;
+        }
+
+        ${item} {
+          scrollbar-width: none;
+        }`;
+
+        // HACK: Firefox
+        if (item === 'body') {
+          style += `html {
+            scrollbar-width: none;
+          }`;
+        }
+
     });
 
     this._style.innerHTML = '';
@@ -60,6 +78,7 @@ export class FsScrollbarService {
     window.document.body.classList.add('fs-scrolling-disabled');
     this.getElements(options.selector).forEach((item) => {
       item.addEventListener('wheel', this.disableScroll, { passive: false });
+      item.addEventListener('scroll', this.disableScroll, { passive: false });
       item.addEventListener('touch', this.disableScroll, { passive: false });
     });
   }
@@ -68,6 +87,7 @@ export class FsScrollbarService {
     window.document.body.classList.remove('fs-scrolling-disabled');
     this.getElements(options.selector).forEach((item) => {
       item.removeEventListener('wheel', this.disableScroll);
+      item.removeEventListener('scroll', this.disableScroll);
       item.removeEventListener('touch', this.disableScroll);
     });
   }
@@ -79,19 +99,23 @@ export class FsScrollbarService {
   }
 
   private disableScroll = (event: any) => {
-    if (this.preventScroll(event, event.path)) {
+
+    const path = event.path || (event.composedPath && event.composedPath());
+
+    if (this.preventScroll(event, path)) {
       event.stopPropagation();
       event.stopImmediatePropagation();
       event.preventDefault();
     }
-
   }
 
   private preventScroll(event, path) {
 
     for (var i = 0, len = path.length; i < len; i++) {
 
-      if (path[i].scrollHeight !== path[i].clientHeight && event.currentTarget !== path[i]) {
+      if (path[i].scrollHeight !== path[i].clientHeight &&
+          path[i].clientHeight &&
+          event.currentTarget !== path[i]) {
         if (event.deltaY < 0 && !path[i].scrollTop) {
           return true;
         }
