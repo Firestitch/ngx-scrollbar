@@ -2,7 +2,7 @@
   "name": "@firestitch/scrollbar",
   "title": "Scrollbar",
   "description": "@firestitch/scrollbar",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-scrollbar"
@@ -45,7 +45,9 @@
     "@angular/platform-browser-dynamic": "^7.2.5",
     "@angular/router": "^7.2.6",
     "@compodoc/compodoc": "^1.1.8",
-    "@firestitch/example": "^7.0.0",
+    "@firestitch/example": "^7.0.7",
+    "@firestitch/menu": "^7.0.1",
+    "@firestitch/drawer": "^7.0.1",
     "@firestitch/iframe": "^0.2.0",
     "@firestitch/message": "^0.2.1",
     "codelyzer": "^4.5.0",

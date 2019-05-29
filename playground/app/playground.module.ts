@@ -15,6 +15,7 @@ import {
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
+import { FsScrollbarModule } from '@firestitch/package';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
+    FsScrollbarModule.forRoot(),
     FsExampleModule.forRoot(),
     FsMessageModule.forRoot(),
     ToastrModule.forRoot({ preventDuplicates: true }),
