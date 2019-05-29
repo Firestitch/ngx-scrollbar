@@ -17,4 +17,6 @@ export class FsScrollbarModule {
       providers: [FsScrollbarService]
     };
   }
+
+  constructor(private fsScrollbarService: FsScrollbarService) {}
 }

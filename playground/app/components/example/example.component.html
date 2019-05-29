@@ -1,10 +1,4 @@
 <div fxLayout="column">
-  <div fxLayout="row" fxLayoutGap="5px">
-    <button mat-raised-button (click)="hide()" *ngIf="scrollbar">Hide Body Scrollbar</button>
-    <button mat-raised-button (click)="show()" *ngIf="!scrollbar">Show Body Scrollbar</button>
-    <button mat-raised-button (click)="disableScrolling()" *ngIf="scrolling">Disable Body Scrolling</button>
-    <button mat-raised-button (click)="enableScrolling()" *ngIf="!scrolling">Enable Body Scrolling</button>
-  </div>
   <div class="content">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vehicula felis. Maecenas ac dui ut dolor hendrerit commodo non nec leo. Etiam magna augue, euismod sed massa sed, ultricies blandit metus. Maecenas et metus odio. Cras et risus nec massa tincidunt semper. Donec et diam sed ipsum porttitor blandit id nec ex. Aenean a mollis nisi.
