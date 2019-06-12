@@ -9,12 +9,24 @@ export class FsScrollbarService {
   private _style: HTMLStyleElement;
 
   constructor() {
-    this._style = document.createElement('style');
-    document.getElementsByTagName('head')[0].appendChild(this._style);
     this.renderScrollbarStyle();
   }
 
+  private getStyleEl(): HTMLElement {
+    return document.getElementById('fs-scrollbar-style');
+  }
+
   private renderScrollbarStyle() {
+
+    let el = this.getStyleEl();
+
+    if (el) {
+      el.remove();
+    }
+
+    el = document.createElement('style');
+    el.setAttribute('id', 'fs-scrollbar-style')
+    document.getElementsByTagName('head')[0].appendChild(el);
 
     const style = `::-webkit-scrollbar {
         height: 6px;
@@ -34,7 +46,7 @@ export class FsScrollbarService {
       }
       `;
 
-    this._style.innerHTML = '';
-    this._style.appendChild(document.createTextNode(style));
+    el.innerHTML = '';
+    el.appendChild(document.createTextNode(style));
   }
 }
