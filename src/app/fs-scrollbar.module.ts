@@ -11,7 +11,7 @@ import { FsScrollbarService } from './services/scrollbar.service';
   ]
 })
 export class FsScrollbarModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<FsScrollbarModule> {
     return {
       ngModule: FsScrollbarModule,
       providers: [FsScrollbarService]
