@@ -15,7 +15,7 @@ import {
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
-import { FsScrollbarModule } from 'ngx/ngx-scrollbar/src/public_api';
+import { FsScrollbarModule } from '../../src/public_api';
 
 
 const routes: Routes = [

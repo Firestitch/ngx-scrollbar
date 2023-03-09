@@ -3,7 +3,7 @@
   "compilerOptions": {
     "importHelpers": true,
     "paths": {
-      "@firestitch/package": [
+      "@firestitch/scrollbar": [
         "src/public_api.ts"
       ],
       "@env": [
