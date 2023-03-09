@@ -7,7 +7,7 @@
         "src/public_api.ts"
       ],
       "@env": [
-        "playground/environments/environment.ts"
+        "playground/environments"
       ]
     }
   }

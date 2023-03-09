@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from 'ngx/ngx-scrollbar/playground/environments/environment';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
