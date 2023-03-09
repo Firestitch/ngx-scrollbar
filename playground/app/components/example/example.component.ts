@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FsScrollbarService } from 'src/app/services';
+
 
 @Component({
   selector: 'example',

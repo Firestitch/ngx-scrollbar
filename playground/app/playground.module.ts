@@ -15,7 +15,8 @@ import {
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
-import { FsScrollbarModule } from '@firestitch/package';
+import { FsScrollbarModule } from 'ngx/ngx-scrollbar/src/public_api';
+
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
@@ -34,14 +35,10 @@ const routes: Routes = [
     ToastrModule.forRoot({ preventDuplicates: true }),
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
   ],
-  entryComponents: [
-  ],
   declarations: [
     AppComponent,
     ExamplesComponent,
     ExampleComponent
-  ],
-  providers: [
   ],
 })
 export class PlaygroundModule {

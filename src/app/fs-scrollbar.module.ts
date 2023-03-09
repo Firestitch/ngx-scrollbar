@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FsScrollbarService } from './services/scrollbar.service';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +18,4 @@ export class FsScrollbarModule {
       providers: [FsScrollbarService]
     };
   }
-
-  constructor(private fsScrollbarService: FsScrollbarService) {}
 }
