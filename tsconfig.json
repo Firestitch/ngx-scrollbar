@@ -1,13 +1,9 @@
 {
-  "extends": "./tools/config/tsconfig.cli.json",
+  "extends": "./node_modules/@firestitch/component-tools/config/tsconfig.cli.json",
   "compilerOptions": {
-    "importHelpers": true,
     "paths": {
-      "@firestitch/scrollbar": [
-        "src/public_api.ts"
-      ],
-      "@env": [
-        "playground/environments"
+      "@firestitch/db": [
+        "src/public.api.ts"
       ]
     }
   }
