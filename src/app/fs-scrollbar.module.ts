@@ -1,5 +1,6 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
 import { FsScrollbarService } from './services/scrollbar.service';
 
 
@@ -8,14 +9,20 @@ import { FsScrollbarService } from './services/scrollbar.service';
     CommonModule,
   ],
   providers: [
-    FsScrollbarService
-  ]
+    FsScrollbarService,
+  ],
 })
 export class FsScrollbarModule {
-  static forRoot(): ModuleWithProviders<FsScrollbarModule> {
+
+  constructor(
+    private readonly _scrollbarService: FsScrollbarService,
+  ) {
+  }
+  
+  public static forRoot(): ModuleWithProviders<FsScrollbarModule> {
     return {
       ngModule: FsScrollbarModule,
-      providers: [FsScrollbarService]
+      providers: [FsScrollbarService],
     };
   }
 }
