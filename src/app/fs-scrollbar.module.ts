@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule, inject } from '@angular/core';
 
 import { FsScrollbarService } from './services/scrollbar.service';
 
@@ -9,11 +9,8 @@ import { FsScrollbarService } from './services/scrollbar.service';
   ],
 })
 export class FsScrollbarModule {
+  private readonly _scrollbarService = inject(FsScrollbarService);
 
-  constructor(
-    private readonly _scrollbarService: FsScrollbarService,
-  ) {
-  }
   
   public static forRoot(): ModuleWithProviders<FsScrollbarModule> {
     return {
