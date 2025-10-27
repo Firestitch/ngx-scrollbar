@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'example',
-  templateUrl: 'example.component.html',
-  styleUrls: ['example.component.scss']
+    selector: 'example',
+    templateUrl: 'example.component.html',
+    styleUrls: ['example.component.scss'],
+    standalone: true
 })
 export class ExampleComponent {
 
